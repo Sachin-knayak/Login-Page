@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login your account</h1>
+        <form class="form">
+            <input id="name" type="text" placeholder="Enter your username">
+            <input id="password" type="password" placeholder="Password">
+            <input id="email" type="email" placeholder="example12@gmail.com">
+            <button id="btn">Login</button>
+            <p>I don't have an account? <span><a href="index1.html">SingUp</a> </span></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', (event) => {
+            event.preventDefault();
+            let name = document.getElementById('name').value
+            let password = document.getElementById('password').value
+            let email = document.getElementById('email').value
+
+            console.log(name + password + email);
+
+            if (name == "" || password == "" || email == "") {
+                alert("Enter your details");
+                return
+            } else {
+                alert("Form submitted successfully")
+            }
+
+        })
+    </script>
+</body>
+
+</html>
