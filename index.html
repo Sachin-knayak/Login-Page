@@ -21,22 +21,32 @@
     </div>
 
     <script>
+
         document.getElementById('btn').addEventListener('click', (event) => {
             event.preventDefault();
+
             let name = document.getElementById('name').value
             let password = document.getElementById('password').value
             let email = document.getElementById('email').value
 
-            console.log(name + password + email);
-
-            if (name == "" || password == "" || email == "") {
-                alert("Enter your details");
-                return
-            } else {
-                alert("Form submitted successfully")
+            if (name === "" || password === "" || email === "") {
+                alert("Enter all details");
+                return;
             }
 
-        })
+            if (name.length < 4) {
+                alert("Username must be at least 4 characters long");
+                return;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return;
+            }
+
+            alert("Form submitted successfully");
+        });
+
     </script>
 </body>
 
